@@ -6,6 +6,7 @@ use Digest::SHA qw(sha512_hex);
 use lib '/app';
 use EncodePassword;
 
+
 app->hook(after_dispatch => sub {
     my $tx = shift;
     $tx->res->headers->header("Server" => "PRNG v1");
@@ -13,8 +14,7 @@ app->hook(after_dispatch => sub {
     $tx->res->headers->header("Cache-Control" => "max-age=1, no-cache, must-revalidate");
 });
 
-## do not
-
+## try 2
 
 get '/' => sub {
     my $self = shift;
