@@ -12,7 +12,6 @@ app->hook(after_dispatch => sub {
     $tx->res->headers->header("Access-Control-Allow-Origin" => "*");
     $tx->res->headers->header("Cache-Control" => "max-age=1, no-cache, must-revalidate");
 });
- 
 
 get '/' => sub {
     my $self = shift;
@@ -27,6 +26,7 @@ get '/' => sub {
         $rndn = join("", unpack("L[16]",$rnd));
         $pass = Encode::PasswdChars::encode_passwd(join("", unpack("L[4]",$rnd)));
     }
+
     return $pass ? $self->render( text => $pass, format => 'txt') : $self->render( text => undef, format => 'txt' ) if $self->req->param('passwd');
     return $rand ? $self->render( json => {'rnd' => $rand, 'passwd' => $pass, 'rndnum' => $rndn, 'entropy' => $entropy , 'msg' => 'done' }  ) : $self->render( json => {'rnd' => undef, 'entropy' => $entropy , 'msg' => 'Unable to sufficiently seed the RNG, try later'} );
 };
