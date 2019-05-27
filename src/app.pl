@@ -14,8 +14,6 @@ app->hook(after_dispatch => sub {
 });
  
 
-
- 
 get '/' => sub {
     my $self = shift;
     $self->render_later;
