@@ -11,7 +11,9 @@ app->hook(after_dispatch => sub {
     $tx->res->headers->header("Server" => "PRNG v1");
     $tx->res->headers->header("Access-Control-Allow-Origin" => "*");
     $tx->res->headers->header("Cache-Control" => "max-age=1, no-cache, must-revalidate");
+    
 });
+
 
 get '/' => sub {
     my $self = shift;
