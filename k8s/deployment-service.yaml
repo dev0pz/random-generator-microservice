@@ -1,0 +1,51 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  labels:
+    app: {{build.profile.app_name}}
+  name: {{build.profile.app_name}}
+  namespace: {{build.profile.namespace}}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{build.profile.app_name}}
+  template:
+    metadata:
+      labels:
+        app: {{build.profile.app_name}}
+    spec:
+      containers:
+      - name: {{build.profile.app_name}}
+        image: {{build.images["Dockerfile"]}}
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
+          name: http
+        resources:
+          limits:
+            cpu: "{{build.profile.container_limit_cpu}}"
+            memory: "{{build.profile.container_limit_memory}}"
+          requests:
+            cpu: "{{build.profile.container_requests_cpu}}"
+            memory: "{{build.profile.container_requests_memory}}"
+        securityContext:
+          allowPrivilegeEscalation: false
+      nodeSelector:
+        beta.kubernetes.io/os: linux
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: {{build.profile.app_name}}
+  name: {{build.profile.app_name}}
+  namespace: {{build.profile.namespace}}
+spec:
+  clusterIP: None
+  ports:
+  - name: http
+    port: 80
+    targetPort: http
+  selector:
+    app: {{build.profile.app_name}}
