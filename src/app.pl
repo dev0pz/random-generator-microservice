@@ -7,8 +7,6 @@ use lib '/app';
 use EncodePassword;
 
 
-
-
 app->hook(after_dispatch => sub {
     my $tx = shift;
     $tx->res->headers->header("Server" => "PRNG v1");
@@ -16,7 +14,7 @@ app->hook(after_dispatch => sub {
     $tx->res->headers->header("Cache-Control" => "max-age=1, no-cache, must-revalidate");
 });
 
-## try 5
+## try 7
 
 get '/' => sub {
     my $self = shift;
