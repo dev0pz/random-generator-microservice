@@ -16,12 +16,9 @@ app->hook(after_dispatch => sub {
 
 
 
-
 ## new ext sum {}
-## EWORJWEOJRW444l3k2lk32j4l230WE::::9234
+## deadc::::9234
 ## exp(345)*in wr234
-
-
 
 
 get '/' => sub {
