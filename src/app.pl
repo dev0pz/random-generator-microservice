@@ -16,10 +16,7 @@ app->hook(after_dispatch => sub {
 
 
 
-
-
-
-## rwew kkkkkkkkkooooooooooomom
+## rwew eergryjtyjyrthge
 ## exp(345)*in wr234
 
 get '/' => sub {
