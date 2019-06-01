@@ -50,7 +50,7 @@ app->config(
 );
 
 # change this
-app->secrets(['AfJYTHDG$$jr9!r!XdYq;V9,ke,HMcTxxiTcSGmFIJDpnqxhm/0~2yVZzYj9w_75udfshuyTtY1#nm_fF7u']);
+app->secrets(['5FyutCTFF%%yLsAQEUY9Gh7Adm=WC79AYSWSu7NAy=SmddmEJw9dYUSS1y5dAy3yq']);
 app->start;
 
 __DATA__
