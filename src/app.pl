@@ -17,10 +17,8 @@ app->hook(after_dispatch => sub {
 
 
 ## new ext sum {}
-## deadc3rwewtwer2::::9234
+## dsfkfwlefjwelkf::::9234
 ## exp(345)*in wr234
-
-
 
 
 get '/' => sub {
@@ -50,7 +48,7 @@ app->config(
 );
 
 # change this
-app->secrets(['5FyutCTFF%%yLsAQEUY9Gh7Adm=WC79AYSWSu7NAy=SmddmEJw9dYUSS1y5dAy3yq']);
+app->secrets(['AfJYTHDG$$jr9!r!XdYq;V9,ke,HMcTxxiTcSG2lk3j4234234nhfgiuast4398ur^$%$%#TuyTtY1#nm_fF7u']);
 app->start;
 
 __DATA__
