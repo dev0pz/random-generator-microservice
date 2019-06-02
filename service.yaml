@@ -9,4 +9,4 @@ profiles:
       container_limit_cpu: 500m
       container_limit_memory: 500Mi
       container_requests_cpu: 100m
-      container_requests_memory: 128Mi
+      container_requests_memo: 128Mi
